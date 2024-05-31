@@ -1,0 +1,15 @@
+void krug(float cx, float cy, float r, int num_segments)
+{
+    glBegin(GL_LINE_LOOP);
+    for(int i = 0; i < num_segments; i++)
+    {
+        float theta = 2.0f * 3.1415926f * float(i) / float(num_segments);
+
+        float x = r * cosf(theta);
+        float y = r * sinf(theta);
+
+        glVertex2f(x + cx, y + cy);
+
+    }
+    glEnd();
+}
